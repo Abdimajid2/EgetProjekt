@@ -1,4 +1,4 @@
-using EgetProjekt.ViewModel;
+using EgetProjekt.Logic;
 
 namespace EgetProjekt;
 
@@ -14,14 +14,15 @@ public partial class LogInPage : ContentPage
         await Navigation.PushAsync(new MainPage());
     }
 
+
     private async void OnLogInbutton(object sender, EventArgs e)
     {
-      
+
         var email = EnterYourEmail.Text;
         var password = EnterYourPassword.Text;
 
         // kollar att inmatningsfältet inte är tomt
-        if(string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+        if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
         {
             DisplayAlert("Error", "Please enter both email and password", "OK");
             return;
@@ -33,9 +34,8 @@ public partial class LogInPage : ContentPage
         // går vidare till start sidan om email och lösenord finns
         if (user != null)
         {
-            await Navigation.PushAsync(new View.StartPageBinding());
-            
-             
+            await Navigation.PushAsync(new View.StartPage(user.FirstName,user.Weight));
+           
         }
         // annars får man detta pop-up meddelandet
         else

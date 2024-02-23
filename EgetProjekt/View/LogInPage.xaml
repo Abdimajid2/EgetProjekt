@@ -79,7 +79,7 @@
             BackgroundColor="White"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="20,50,13,0"
+            Margin="2,50,13,0"
             Clicked="OnGoBckToMainPage"></Button>
     </VerticalStackLayout>
 </ContentPage>

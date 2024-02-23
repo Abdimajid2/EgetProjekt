@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using EgetProjekt.Models;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +7,12 @@ using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EgetProjekt.Models
+namespace EgetProjekt.DataAccessManager
 {
-  public  class  Connection
+    public class Connection
     {
+
+
         private static MongoClient GetClient()
         {
             string connectionString = "mongodb+srv://Majid:AdminMajid99@weightjourney.lbhjpnb.mongodb.net/?retryWrites=true&w=majority";
@@ -20,13 +23,13 @@ namespace EgetProjekt.Models
             var MongoClient = new MongoClient(settings);
             return MongoClient;
         }
-        public static IMongoCollection<Models.User> UserCollection()
+        public static IMongoCollection<User> UserCollection()
         {
             var client = GetClient();
 
             var database = client.GetDatabase("UserDB");
 
-            var userCollection = database.GetCollection<Models.User>("User");
+            var userCollection = database.GetCollection<User>("User");
 
             return userCollection;
         }

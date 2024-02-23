@@ -5,16 +5,23 @@
 
     <ScrollView>
         <VerticalStackLayout
-           BackgroundColor="DarkSlateGray">
+           BackgroundColor="DarkSlateGray" >
 
+          
             <Label
-                Text="WELCOME TO MY APP"
+                Text="WELCOME TO"
                 TextColor="White"
                 Margin="1,50,0,0"
                 FontSize="Large"
                 HorizontalOptions="Center">
                 
             </Label>
+
+            <Image
+              Source="logofortheapp.png"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+              Margin="529,4"></Image>
 
             <Button
                 x:Name="CreateAccountButton"
@@ -24,14 +31,14 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Clicked="OnCreateAccountClicked"
-                Margin="1,100,0,0"></Button>
+                Margin="1,50,0,0"></Button>
 
             <Label
                 Text="OR"
                 TextColor="Black"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                Margin="1,100,0,0"></Label>
+                Margin="1,50,0,0"></Label>
 
             <Button
                 x:Name="LogInButton"
@@ -40,7 +47,7 @@
                 TextColor="White"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                Margin="1,100,0,0"
+                Margin="1,50,0,0"
                 Clicked="OnLogInclicked">
                 
             </Button>

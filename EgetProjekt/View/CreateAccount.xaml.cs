@@ -1,4 +1,4 @@
-using EgetProjekt.Models;
+using EgetProjekt.DataAccessManager;
 using EgetProjekt.View;
 using EgetProjekt.ViewModel;
 using System.Globalization;
@@ -29,6 +29,15 @@ public partial class CreateAccount : ContentPage
 
         decimal weight, height;
 
+        //if(string.IsNullOrEmpty(Firstname) ||
+        //  (string.IsNullOrEmpty(Lastname) ||
+        //  (string.IsNullOrEmpty(Email) ||
+        //  (string.IsNullOrEmpty(Password) ||
+        //  (decimal .TryParse(Email, out Email) &&)
+        //{
+
+        //}
+
         decimal.TryParse(EnterWeight.Text, out weight);
         decimal.TryParse((EnterHeight.Text), out height);
         DateTime birthyear;
@@ -48,7 +57,7 @@ public partial class CreateAccount : ContentPage
 
         await usercollection.InsertOneAsync(user);
 
-        await Navigation.PushAsync(new StartPageBinding());
+        await Navigation.PushAsync(new View.StartPage(user.FirstName, user.Weight));
     }
 
   

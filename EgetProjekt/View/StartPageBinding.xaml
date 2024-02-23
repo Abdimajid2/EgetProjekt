@@ -4,10 +4,17 @@
              x:Class="EgetProjekt.View.StartPageBinding"
              Title="Start Page">
     <VerticalStackLayout>
-        <Label 
-            Text=" " 
+        <StackLayout 
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+            <Label
+            
+            Text="{Binding FirstName, StringFormat='welcome {0}'}"
+            VerticalOptions="Center"
             HorizontalOptions="Center"
-            TextColor="White"/>
+            TextColor="White"></Label>
+
+        </StackLayout>
 
         <!--<Label
             Text="REMBER THIS JOURNY IS A MARATHON NOT AN SPRINT"
