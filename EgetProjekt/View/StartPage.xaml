@@ -5,13 +5,31 @@
              Title="StartPage">
     <VerticalStackLayout>
         <Label
-           x:Name="WelcomeLabel"
-           VerticalOptions="Center"
-           HorizontalOptions="Center"></Label>
+          x:Name="WelcomeLabel"
+         VerticalOptions="Center"
+         HorizontalOptions="Center"></Label>
         <Label
-            x:Name="WeightLabel"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"></Label>
+          x:Name="WeightLabel"
+         VerticalOptions="Center"
+         HorizontalOptions="Center"></Label>
+
+        <Label
+            Text="NEW WEIGHT"
+            TextColor ="White"
+            Margin="11,30,0,0"></Label>
+
+        <Entry
+            x:Name="EnterNewWeight"
+            BackgroundColor="Grey"
+            TextColor="White"
+            Margin="10,0,10,0"></Entry>
+
+        <Button
+            Text="Click here to save the new weight!"
+            BackgroundColor="Grey"
+            TextColor="White"
+            Margin="10,10,10,0"
+            Clicked="GetNewWeightCliced"></Button>
 
         
     </VerticalStackLayout>

@@ -28,13 +28,13 @@ public partial class LogInPage : ContentPage
             return;
         }
 
-        LogInValidation validate = new LogInValidation();
+       LogInValidation validate = new LogInValidation();
 
         var user = await validate.CheckLoginInformation(email, password);
         // går vidare till start sidan om email och lösenord finns
         if (user != null)
         {
-            await Navigation.PushAsync(new View.StartPage(user.FirstName,user.Weight));
+            await Navigation.PushAsync(new View.StartPage(user.FirstName,user.Weight,user.id));
            
         }
         // annars får man detta pop-up meddelandet

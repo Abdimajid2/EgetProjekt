@@ -20,9 +20,9 @@ namespace EgetProjekt.Models
 
         public DateTime BirthYear { get; set; }
 
-        public decimal Weight { get; set; }
+        public int Weight { get; set; }
 
-        public decimal Height { get; set; }
+        public int Height { get; set; }
 
 
     }

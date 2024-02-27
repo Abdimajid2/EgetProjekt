@@ -28,7 +28,7 @@ namespace EgetProjekt.Logic
 
         //public async Task<Models.User> CheckCreateAccountInformation()
         //{
-
+            
         //}
 
         //public async Task<string> CheckTheEmptyFields(Models.User user)  
