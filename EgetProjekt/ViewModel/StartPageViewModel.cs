@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace EgetProjekt.ViewModel
@@ -15,7 +16,7 @@ namespace EgetProjekt.ViewModel
 
         public StartPageViewModel()
         {
-          var task = Task.Run(() => TheUser = new Models.User());
+            var task = Task.Run(() => TheUser = new Models.User());
             task.Wait();
             this.TheUser = task.Result;
         }
@@ -31,7 +32,7 @@ namespace EgetProjekt.ViewModel
             var MongoClient = new MongoClient(settings);
             return MongoClient;
         }
-        public static IMongoCollection<Weight>WeightCollection()
+        public static IMongoCollection<Weight> WeightCollection()
         {
             var client = GetWeights();
 
@@ -42,5 +43,28 @@ namespace EgetProjekt.ViewModel
             return weightCollection;
         }
 
+
+        public static async Task<List<Models.QuotesApi>> GetQuotes()
+        {
+
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://api.api-ninjas.com/");
+            client.DefaultRequestHeaders.Add("X-Api-key", "pMoFBo38AoYqb6c2CFIB8g==fN7OdvT6YTG6odWq");
+
+
+            List<Models.QuotesApi> Quotes = null;
+
+            HttpResponseMessage response = await client.GetAsync("v1/quotes?category=fitness");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responsestring = await response.Content.ReadAsStringAsync();
+                Quotes = JsonSerializer.Deserialize<List<QuotesApi>>(responsestring);
+
+
+            }
+            return Quotes;
+
+        }
     }
 }

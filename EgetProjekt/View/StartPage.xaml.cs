@@ -6,9 +6,7 @@ namespace EgetProjekt.View;
 
 public partial class StartPage : ContentPage
 {
-	// deklarerar en userid
-	 private Guid userid;
-
+	 
 	public StartPage(string firstname,decimal weight,Guid Id)
 	{
 		InitializeComponent();
@@ -16,9 +14,9 @@ public partial class StartPage : ContentPage
 		WelcomeLabel.Text = $"WELCOME {firstname}";
 		WeightLabel.Text = $"YOUR CURRENT WEIGHT IS {weight}KG";
 
-		// sätter userid till den id som skickas med sidan
-		 userid = Id;
-		 
+		GetRiddles();
+		
+  
 	}
 
     private async void GetNewWeightCliced(object sender, EventArgs e)
@@ -33,7 +31,7 @@ public partial class StartPage : ContentPage
 		Models.Weight weight = new Models.Weight
 		{
 			
-		   userId = userid,
+		   userId = Id,
 			NewWeight = enterWeight,
 			WeightRecorded = DateTime.Now.Date,
 		};
@@ -49,5 +47,28 @@ public partial class StartPage : ContentPage
  
     }
 
-	 
+    private async void OnGetWeightHistory(object sender, EventArgs e)
+    {
+		var weightdata = StartPageViewModel.WeightCollection();
+
+		Models.User user = new Models.User();
+
+		
+
+		await Navigation.PushAsync(new View.WeightHistoryPage(user.id));
+    }
+
+	private async void GetRiddles()
+	{
+		List<Models.QuotesApi> Quotes = await ViewModel.StartPageViewModel.GetQuotes();
+
+		if(Quotes !=null && Quotes.Count > 0)
+		{
+			Models.QuotesApi Quote = Quotes[0];
+
+			Author.Text = Quote.author;
+			quote.Text = Quote.quote;
+			
+		}
+	}
 }

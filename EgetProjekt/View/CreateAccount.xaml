@@ -55,7 +55,7 @@
                 BackgroundColor="White"></Entry>
 
             <Label
-                Text="BIRTHDATE"
+                Text="BIRTHDATE (yyy-mm-dd)"
                 TextColor="White"
                 Margin="1,20,0,0"></Label>
 

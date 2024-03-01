@@ -31,6 +31,32 @@
             Margin="10,10,10,0"
             Clicked="GetNewWeightCliced"></Button>
 
+        <Button
+            x:Name="HistoryButton"
+            Text="HISTORY"
+            TextColor="White"
+            BackgroundColor="Grey"
+            Margin="10,20,10,0"
+            Clicked="OnGetWeightHistory"></Button>
+
+        <Label
+            x:Name="GetQuoteLabel"
+            TextColor="White"></Label>
+
+        <Label
+            x:Name="Author"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="White"></Label>
+
+        <Label
+            x:Name="quote"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="White"></Label>
+
+        
+
         
     </VerticalStackLayout>
 </ContentPage>

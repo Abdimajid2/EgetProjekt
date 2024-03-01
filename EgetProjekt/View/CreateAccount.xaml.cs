@@ -25,8 +25,8 @@ public partial class CreateAccount : ContentPage
         var Lastname = EnterLastName.Text;
         var Email = EnterEmail.Text;
         var Password = EnterPassword.Text;
-
         int weight, height;       
+
         if (string.IsNullOrEmpty(Firstname) ||
           string.IsNullOrEmpty(Lastname) ||
           string.IsNullOrEmpty(Email) ||
@@ -39,12 +39,12 @@ public partial class CreateAccount : ContentPage
         }
 
         DateTime birthyear;
-        if (!DateTime.TryParseExact(EnterBirthDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out birthyear))
+        if (!DateTime.TryParse(EnterBirthDate.Text, out birthyear))
         {
             DisplayAlert("ERROR", "Please write birth in right format","OK");
             return;
-        }     
-        birthyear = birthyear.Date;
+        }
+
         Models.User user = new Models.User
         {
             id = Guid.NewGuid(),
