@@ -27,14 +27,12 @@ public partial class LogInPage : ContentPage
             DisplayAlert("Error", "Please enter both email and password", "OK");
             return;
         }
-
-       LogInValidation validate = new LogInValidation();
-
-        var user = await validate.CheckLoginInformation(email, password);
+  
+        var user = await LogInValidation.CheckLoginInformation(email, password);
         // går vidare till start sidan om email och lösenord finns
         if (user != null)
         {
-            await Navigation.PushAsync(new View.StartPage(user.FirstName, user.Weight, user.id));
+            await Navigation.PushAsync(new View.StartPage());
            
         }
         // annars får man detta pop-up meddelandet

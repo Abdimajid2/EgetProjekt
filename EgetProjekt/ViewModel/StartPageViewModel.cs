@@ -32,6 +32,7 @@ namespace EgetProjekt.ViewModel
             var MongoClient = new MongoClient(settings);
             return MongoClient;
         }
+
         public static IMongoCollection<Weight> WeightCollection()
         {
             var client = GetWeights();
@@ -65,6 +66,26 @@ namespace EgetProjekt.ViewModel
             }
             return Quotes;
 
+        }
+
+        public static async Task<Models.Weight> getlatestWeight()
+        {
+            Models.User loggedinuser = Models.User.GetLoggedinUser();
+
+            var weightcollection = WeightCollection();
+
+            if (loggedinuser != null)
+            {
+
+                var latestweight = await weightcollection.Find(w => w.userId == loggedinuser.id)
+                              .SortByDescending(w => w.WeightRecorded).FirstOrDefaultAsync();
+
+                return latestweight;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

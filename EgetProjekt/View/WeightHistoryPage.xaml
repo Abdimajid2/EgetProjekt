@@ -4,9 +4,16 @@
              x:Class="EgetProjekt.View.WeightHistoryPage"
              Title="WeightHistoryPage">
     <VerticalStackLayout>
+        
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             x:Name="Label"
+            TextColor="White"></Label>
+        <ListView>
+            
+         
+        <Label
+            x:Name="WeightLabel"
+            TextColor="White"></Label>
+        </ListView>
     </VerticalStackLayout>
 </ContentPage>

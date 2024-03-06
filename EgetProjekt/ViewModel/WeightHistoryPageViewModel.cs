@@ -11,12 +11,27 @@ namespace EgetProjekt.ViewModel
     internal class WeightHistoryPageViewModel
     {
 
-        //public static async Task<List<Weight>> GetWeightHistory(Guid userid)
-        //{
-        //    // kommer åt data från weightcollection
-        //    var weightcollection = StartPageViewModel.WeightCollection();
+        public static async Task<List<Models.Weight>> getlatestWeights()
+        {
+            Models.User loggedinuser = Models.User.GetLoggedinUser();
 
-        //    var weighthistory = await weightcollection.Find(h => h.userId == userid).ToListAsync();
-        //}
+            var weightcollection = StartPageViewModel.WeightCollection();
+
+            if (loggedinuser != null)
+            {
+  
+                var latestweight = await weightcollection.Find(w => w.userId == loggedinuser.id)
+                              .SortByDescending(w => w.WeightRecorded).ToListAsync();
+
+                return latestweight;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+         
+        
     }
 }

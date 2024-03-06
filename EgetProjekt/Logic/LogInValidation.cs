@@ -1,4 +1,5 @@
 ﻿using EgetProjekt.DataAccessManager;
+using EgetProjekt.ViewModel;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace EgetProjekt.Logic
 {
     public class LogInValidation
     {
-        public async Task<Models.User> CheckLoginInformation(string email, string password)
+        public static async Task<Models.User> CheckLoginInformation(string email, string password)
         {
             var usercollection = Connection.UserCollection();
 
@@ -18,22 +19,40 @@ namespace EgetProjekt.Logic
 
             if (user != null && user.Password == password)
             {
+                Models.User.SetLoggedInUser(user);
                 return user;
             }
             else
             {
                 return null;
             }
-        }
 
-        //public async Task<Models.User> CheckCreateAccountInformation()
+
+        } 
+        
+        //public static async Task<List<Models.Weight>> getlatestWeight(string email, string password)
         //{
-            
+             
+        //    var usercollection = Connection.UserCollection();
+
+        //    var user = await CheckLoginInformation(email, password);
+
+        //    if (user != null )
+        //    {
+        //        var weightcollection = StartPageViewModel.WeightCollection();
+        //        var latestweight = await weightcollection.Find(w => w.userId == user.id)
+        //                      .SortByDescending(w => w.WeightRecorded).ToListAsync();
+                
+        //        return latestweight;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
         //}
 
-        //public async Task<string> CheckTheEmptyFields(Models.User user)  
-        //{
 
-        //}
+
+        
     }
 }

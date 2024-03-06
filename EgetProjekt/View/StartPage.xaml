@@ -40,19 +40,24 @@
             Clicked="OnGetWeightHistory"></Button>
 
         <Label
-            x:Name="GetQuoteLabel"
+              Text="Today's quote is by"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,11,320,0"
             TextColor="White"></Label>
 
         <Label
             x:Name="Author"
             VerticalOptions="Center"
             HorizontalOptions="Center"
+            Margin="100,-20,120,0"
             TextColor="White"></Label>
 
         <Label
             x:Name="quote"
             VerticalOptions="Center"
             HorizontalOptions="Center"
+            Margin="10"
             TextColor="White"></Label>
 
         

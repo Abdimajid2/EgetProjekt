@@ -8,6 +8,18 @@ namespace EgetProjekt.Models
 {
    public class User
     {
+        private static User loggedinuser = new User();
+
+       public static User GetLoggedinUser()
+        {
+            return loggedinuser;
+        }
+
+        public static void SetLoggedInUser(User user)
+        {
+            loggedinuser = user;
+        }
+
         public Guid id { get; set; }
 
         public string FirstName { get; set; }
@@ -23,6 +35,7 @@ namespace EgetProjekt.Models
         public int Weight { get; set; }
 
         public int Height { get; set; }
+
 
 
     }

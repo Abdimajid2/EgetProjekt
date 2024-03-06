@@ -1,4 +1,5 @@
 
+using EgetProjekt.Logic;
 using EgetProjekt.Models;
 using EgetProjekt.ViewModel;
 
@@ -7,14 +8,16 @@ namespace EgetProjekt.View;
 public partial class StartPage : ContentPage
 {
 	 
-	public StartPage(string firstname,decimal weight,Guid Id)
+	public StartPage()
 	{
 		InitializeComponent();
+		Models.User loggedinuser = Models.User.GetLoggedinUser();
+		WelcomeLabel.Text = $"WELCOME {loggedinuser.FirstName}";
+		CollectlatestRecorded();
 
-		WelcomeLabel.Text = $"WELCOME {firstname}";
-		WeightLabel.Text = $"YOUR CURRENT WEIGHT IS {weight}KG";
 
-		GetRiddles();
+
+		GetQuotes();
 		
   
 	}
@@ -27,11 +30,11 @@ public partial class StartPage : ContentPage
 			DisplayAlert("ERROR", "Enter only numbers", "OK");
 			return;
 		}
-
-		Models.Weight weight = new Models.Weight
+        Models.User loggedinuser = Models.User.GetLoggedinUser();
+        Models.Weight weight = new Models.Weight
 		{
 			
-		   userId = Id,
+		   userId = loggedinuser.id,
 			NewWeight = enterWeight,
 			WeightRecorded = DateTime.Now.Date,
 		};
@@ -49,16 +52,10 @@ public partial class StartPage : ContentPage
 
     private async void OnGetWeightHistory(object sender, EventArgs e)
     {
-		var weightdata = StartPageViewModel.WeightCollection();
-
-		Models.User user = new Models.User();
-
-		
-
-		await Navigation.PushAsync(new View.WeightHistoryPage(user.id));
+		await Navigation.PushAsync(new WeightHistoryPage());
     }
 
-	private async void GetRiddles()
+	private async void GetQuotes()
 	{
 		List<Models.QuotesApi> Quotes = await ViewModel.StartPageViewModel.GetQuotes();
 
@@ -70,5 +67,16 @@ public partial class StartPage : ContentPage
 			quote.Text = Quote.quote;
 			
 		}
+	}
+
+	private async void CollectlatestRecorded()
+	{
+		var latesweight = await StartPageViewModel.getlatestWeight();
+
+		if(latesweight != null)
+		{
+			WeightLabel.Text = $"Your current weight is {latesweight.NewWeight}kg";
+		}
+
 	}
 }
