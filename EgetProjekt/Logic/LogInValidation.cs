@@ -27,7 +27,6 @@ namespace EgetProjekt.Logic
                 return null;
             }
 
-
         } 
         
         //public static async Task<List<Models.Weight>> getlatestWeight(string email, string password)

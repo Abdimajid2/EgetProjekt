@@ -36,7 +36,7 @@ public partial class StartPage : ContentPage
 			
 		   userId = loggedinuser.id,
 			NewWeight = enterWeight,
-			WeightRecorded = DateTime.Now.Date,
+			WeightRecorded = DateTime.Today,
 		};
 
 		//uppdaterar till den nya vikten

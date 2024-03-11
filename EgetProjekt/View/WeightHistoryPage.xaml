@@ -8,12 +8,19 @@
         <Label 
              x:Name="Label"
             TextColor="White"></Label>
-        <ListView>
-            
+        <ListView ItemsSource="{Binding TheWeights}" x:Name=" WeightListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding NewWeight}" TextColor="White"></Label>
+                            <Label Text="{Binding WeightRecorded} " TextColor="White"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
          
-        <Label
-            x:Name="WeightLabel"
-            TextColor="White"></Label>
+        
         </ListView>
     </VerticalStackLayout>
 </ContentPage>
