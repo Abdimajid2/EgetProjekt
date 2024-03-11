@@ -6,35 +6,29 @@ namespace EgetProjekt.View;
 
 public partial class WeightHistoryPage : ContentPage
 {
-	public WeightHistoryPage()
+	public WeightHistoryPage(Models.User user)
 	{
 		InitializeComponent();
 
         Models.User loggedinuser = Models.User.GetLoggedinUser();
-
-        Label.Text = $"Here is your weight history {loggedinuser.FirstName}";
+        if(loggedinuser == null)
+        {
+            WeightHistoryLabel.Text = $"Here is your weight history {user.FirstName}";
+        }
+        else
+        {
+            WeightHistoryLabel.Text = $"Here is your weight history {loggedinuser.FirstName}";
+        }
+       
         displayWeightHistory();
 
        BindingContext = new ViewModel.WeightHistoryPageViewModel();
 
-        //WeightHistoryPageViewModel.getlatestWeights();
-        //displayweights();
+         
 
     }
 
-	//private async Task displayweights()
-	//{
-
- //       Models.User loggedinuser = Models.User.GetLoggedinUser();
-
- //       var weightstask = WeightHistoryPageViewModel.getlatestWeights();
- //       var weights = await weightstask;
- //       foreach (var weight in weights)
- //       {
- //           WeightLabel.Text = $"{weight.NewWeight}kg - Recorded at {weight.WeightRecorded}";
- //       }
- //   }
-
+ 
     private async Task displayWeightHistory()
     {
 

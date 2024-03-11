@@ -1,4 +1,5 @@
 
+using EgetProjekt.DataAccessManager;
 using EgetProjekt.Logic;
 using EgetProjekt.Models;
 using EgetProjekt.ViewModel;
@@ -8,14 +9,21 @@ namespace EgetProjekt.View;
 public partial class StartPage : ContentPage
 {
 	 
-	public StartPage()
+	public StartPage(Models.User user)
 	{
 		InitializeComponent();
 		Models.User loggedinuser = Models.User.GetLoggedinUser();
-		WelcomeLabel.Text = $"WELCOME {loggedinuser.FirstName}";
-		CollectlatestRecorded();
-
-
+		if (loggedinuser == null)
+		{
+			WelcomeLabel.Text = $"WELCOME {loggedinuser.FirstName}";
+		}
+		else
+		{
+            WelcomeLabel.Text = $"WELCOME {user.FirstName}";
+        }
+ 
+        CollectlatestRecorded();
+ 
 
 		GetQuotes();
 		
@@ -36,7 +44,7 @@ public partial class StartPage : ContentPage
 			
 		   userId = loggedinuser.id,
 			NewWeight = enterWeight,
-			WeightRecorded = DateTime.Today,
+			WeightRecorded = DateTime.Now,
 		};
 
 		//uppdaterar till den nya vikten
@@ -52,7 +60,8 @@ public partial class StartPage : ContentPage
 
     private async void OnGetWeightHistory(object sender, EventArgs e)
     {
-		await Navigation.PushAsync(new WeightHistoryPage());
+        Models.User user = new Models.User();
+		await Navigation.PushAsync(new WeightHistoryPage(user));
     }
 
 	private async void GetQuotes()

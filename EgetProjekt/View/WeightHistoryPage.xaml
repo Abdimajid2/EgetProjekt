@@ -6,7 +6,7 @@
     <VerticalStackLayout>
         
         <Label 
-             x:Name="Label"
+             x:Name="WeightHistoryLabel"
             TextColor="White"></Label>
         <ListView ItemsSource="{Binding TheWeights}" x:Name=" WeightListView">
             <ListView.ItemTemplate>
@@ -19,8 +19,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-         
-        
         </ListView>
     </VerticalStackLayout>
 </ContentPage>

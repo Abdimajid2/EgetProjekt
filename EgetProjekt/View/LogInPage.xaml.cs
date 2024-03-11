@@ -32,7 +32,7 @@ public partial class LogInPage : ContentPage
         // går vidare till start sidan om email och lösenord finns
         if (user != null)
         {
-            await Navigation.PushAsync(new View.StartPage());
+            await Navigation.PushAsync(new View.StartPage(user));
            
         }
         // annars får man detta pop-up meddelandet

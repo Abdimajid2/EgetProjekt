@@ -14,14 +14,6 @@ namespace EgetProjekt.ViewModel
     {
         public Models.User TheUser { get; set; }
 
-        public StartPageViewModel()
-        {
-            var task = Task.Run(() => TheUser = new Models.User());
-            task.Wait();
-            this.TheUser = task.Result;
-        }
-
-
         private static MongoClient GetWeights()
         {
             string connectionString = "mongodb+srv://Majid:AdminMajid99@weightjourney.lbhjpnb.mongodb.net/?retryWrites=true&w=majority";

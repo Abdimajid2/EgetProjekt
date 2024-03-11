@@ -61,7 +61,7 @@ public partial class CreateAccount : ContentPage
 
         await usercollection.InsertOneAsync(user);
 
-        await Navigation.PushAsync(new View.StartPage());
+        await Navigation.PushAsync(new View.StartPage(user));
     }
 
   
