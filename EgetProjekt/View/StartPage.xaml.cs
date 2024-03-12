@@ -21,9 +21,9 @@ public partial class StartPage : ContentPage
 		{
             WelcomeLabel.Text = $"WELCOME {user.FirstName}";
         }
- 
-        CollectlatestRecorded();
- 
+
+		CollectlatestRecorded();
+
 
 		GetQuotes();
 		
@@ -48,7 +48,7 @@ public partial class StartPage : ContentPage
 		};
 
 		//uppdaterar till den nya vikten
-        WeightLabel.Text = $"YOUR CURRENT WEIGHT IS {weight.NewWeight}KG";
+        WeightLabel.Text = $"YOUR NEW WEIGHT IS {weight.NewWeight}KG";
         
 		var weightcollection = StartPageViewModel.WeightCollection();
 
@@ -82,7 +82,7 @@ public partial class StartPage : ContentPage
 	{
 		var latesweight = await StartPageViewModel.getlatestWeight();
 
-		if(latesweight != null)
+		if (latesweight != null)
 		{
 			WeightLabel.Text = $"Your current weight is {latesweight.NewWeight}kg";
 		}

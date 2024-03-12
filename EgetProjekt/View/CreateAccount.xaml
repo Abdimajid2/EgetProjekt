@@ -3,107 +3,147 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EgetProjekt.CreateAccount"
              Title="CreateAccount"
-             BackgroundColor="DarkSlateGrey">
+             BackgroundColor="#1e272e">
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout>  
 
-            <Label
-          Text="CREATE ACCOUNT"
-          TextColor="White"
-          FontSize="Large"
-          HorizontalOptions="Center"
-          VerticalOptions="Center"
-          Margin="20,0,20,11"></Label>
+       
+            <Label 
+            Text="CREATE ACCOUNT"
+            TextColor="Orange"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+            Margin="20,0,20,20"/>
 
-            <Label
-                Text="FIRSTNAME"
-                TextColor="White"></Label>   
 
-            <Entry
-             x:Name="EnterFirstName"
-                  TextColor="Black"
-             Background="White"></Entry>
-
-            <Label
-                Text="LASTNAME"
-                TextColor="White"
-                Margin="1,21,0,0"></Label>
-            <Entry
-                x:Name="EnterLastName"
-                Margin="1,3,1,0"
-                  TextColor="Black"
-                BackgroundColor="White"></Entry>
-
-            <Label
-                Text="EMAIL"
-                TextColor="White"
-                Margin="1,20,0,0"></Label>
-
-            <Entry
-                x:Name="EnterEmail"
-                  TextColor="Black"
-                BackgroundColor="White"></Entry>
-
-            <Label
-                Text="PASSWORD"
-                TextColor="White"
-                Margin="1,20,0,0"></Label>
-
-            <Entry
-                x:Name="EnterPassword"
-                TextColor="Black"
-                BackgroundColor="White"></Entry>
-
-            <Label
-                Text="BIRTHDATE (yyy-mm-dd)"
-                TextColor="White"
-                Margin="1,20,0,0"></Label>
-
-            <Entry
-                x:Name="EnterBirthDate"
-                TextColor="Black"
-                BackgroundColor="White"></Entry>
-
-            <Label
-                Text="HEIGHT(IN CM)"
-                TextColor="White"
-                Margin="1,20,0,0"></Label>
-
-            <Entry
-                x:Name="EnterHeight"
-                TextColor="Black"
-                BackgroundColor="White"></Entry>
-
-            <Label
-               Text="WEIGHT(IN KG)"
-               TextColor="White"
-                Margin="1,20,0,0"></Label>
-
-            <Entry
-                x:Name="EnterWeight"    
-                BackgroundColor="White"
-                TextColor="Black"></Entry>
-                
-                
-                
-
-            <Button
-            Text="START PAGE"
-            TextColor="Black"    
-            BackgroundColor="White"
-            Margin="25,19,28,4"
-            Clicked="OnStartPage"></Button>
-
-        <Button
-            Text="BACK"
-            TextColor="Black"
-            BackgroundColor="White"
-            Margin="25,4,25,4"
-            Clicked='OnGoBckToMainPage'></Button>
-
+            <StackLayout>
+                <Label
+                    Text="FIRST NAME"
+                    TextColor="LightGrey"
+                    FontSize="16"/>
 
                  
+                    <Entry
+                    x:Name="EnterFirstName"
+                    Placeholder="Enter First Name"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"/>
 
-    </VerticalStackLayout>
+                  
+                    <Label
+                    Text="LAST NAME"
+                    TextColor="LightGrey"
+                    FontSize="16"
+                    Margin="20,10,0,0"/>
+
+                
+                    <Entry
+                    x:Name="EnterLastName"
+                    Placeholder="Enter Last Name"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"/>
+
+                  
+                    <Label
+                    Text="EMAIL"
+                    TextColor="LightGrey"
+                    FontSize="16"
+                    Margin="20,10,0,0"/>
+
+                   
+                    <Entry
+                    x:Name="EnterEmail"
+                    Placeholder="Enter Email"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"/>
+
+                  
+                    <Label
+                    Text="PASSWORD"
+                    TextColor="LightGrey"
+                    FontSize="16"
+                    Margin="20,10,0,0"/>
+
+                  
+                    <Entry
+                    x:Name="EnterPassword"
+                    Placeholder="Enter Password"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"
+                    IsPassword="True"/>
+
+                
+                    <Label
+                    Text="BIRTHDATE (yyyy-mm-dd)"
+                    TextColor="LightGrey"
+                    FontSize="16"
+                    Margin="20,10,0,0"/>
+
+              
+                    <Entry
+                    x:Name="EnterBirthDate"
+                    Placeholder="Enter Birthdate"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"/>
+
+                 <Label
+                    Text="HEIGHT (IN CM)"
+                    TextColor="LightGrey"
+                    FontSize="16"
+                    Margin="20,10,0,0"/>
+ 
+                    <Entry
+                    x:Name="EnterHeight"
+                    Placeholder="Enter Height"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"/>
+
+              
+                    <Label
+                    Text="WEIGHT (IN KG)"
+                    TextColor="LightGrey"
+                    FontSize="16"
+                    Margin="20,10,0,0"/>
+
+                  <Entry
+                    x:Name="EnterWeight"    
+                    Placeholder="Enter Weight"
+                    PlaceholderColor="LightGrey"
+                    TextColor="LightGrey"
+                    BackgroundColor="DarkSlateGray"
+                    Margin="20,0,20,10"/>
+
+                  
+                    <Button
+                    Text="START PAGE"
+                    TextColor="DarkSlateGrey"
+                    BackgroundColor="Orange"
+                    Margin="20,20,20,10"
+                    Clicked="OnStartPage"/>
+
+                   
+                <Button
+          Text="BACK"
+          TextColor="Black"
+          BackgroundColor="White"
+          Margin="25,4,25,4"
+          Clicked='OnGoBckToMainPage'></Button>
+
+            </StackLayout>
+
+            </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

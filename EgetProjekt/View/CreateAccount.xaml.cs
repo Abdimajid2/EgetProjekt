@@ -64,5 +64,5 @@ public partial class CreateAccount : ContentPage
         await Navigation.PushAsync(new View.StartPage(user));
     }
 
-  
+    
 }

@@ -3,22 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EgetProjekt.View.WeightHistoryPage"
              Title="WeightHistoryPage">
-    <VerticalStackLayout>
-        
+    <StackLayout BackgroundColor="#1e272e">
+
+       
         <Label 
-             x:Name="WeightHistoryLabel"
-            TextColor="White"></Label>
-        <ListView ItemsSource="{Binding TheWeights}" x:Name=" WeightListView">
+            x:Name="WeightHistoryLabel"
+            TextColor="Orange"
+            FontSize="35"
+            Margin="20,20,20,10"
+            HorizontalOptions="Center"/>
+
+        
+        <ListView ItemsSource="{Binding TheWeights}" x:Name="WeightListView" SeparatorVisibility="None">
+           
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding NewWeight}" TextColor="White"></Label>
-                            <Label Text="{Binding WeightRecorded} " TextColor="White"></Label>
+                      
+                        <StackLayout BackgroundColor="#2C3E50" Margin="20,5" Padding="20">
+
+                           
+                            <Label Text="{Binding NewWeight, StringFormat='{0}KG'}" TextColor="White" FontSize="18" Margin="0,0,0,5"/>
+
+                           
+                            <Label Text="{Binding WeightRecorded}" TextColor="White" FontSize="14"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </VerticalStackLayout>
+    </StackLayout>
 </ContentPage>
