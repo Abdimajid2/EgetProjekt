@@ -22,7 +22,14 @@ public partial class StartPage : ContentPage
             WelcomeLabel.Text = $"WELCOME {user.FirstName}";
         }
 
-		CollectlatestRecorded();
+		if (loggedinuser != null)
+		{
+
+
+			CollectlatestRecorded();
+		}
+		 
+		 
 
 
 		GetQuotes();
@@ -88,4 +95,9 @@ public partial class StartPage : ContentPage
 		}
 
 	}
+
+    private async void OnLogoutButton(object sender, EventArgs e)
+    {
+		await Navigation.PushAsync(new MainPage());
+    }
 }

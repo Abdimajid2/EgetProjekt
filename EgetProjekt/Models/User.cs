@@ -34,7 +34,7 @@ namespace EgetProjekt.Models
 
         public int Weight { get; set; }
 
-        public int Height { get; set; }
+        //public int Height { get; set; }
 
 
 

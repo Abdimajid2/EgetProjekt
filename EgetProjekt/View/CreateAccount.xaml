@@ -19,7 +19,7 @@
 
             <StackLayout>
                 <Label
-                    Text="FIRST NAME"
+                    Text="     FIRST NAME"
                     TextColor="LightGrey"
                     FontSize="16"/>
 
@@ -78,8 +78,7 @@
                     PlaceholderColor="LightGrey"
                     TextColor="LightGrey"
                     BackgroundColor="DarkSlateGray"
-                    Margin="20,0,20,10"
-                    IsPassword="True"/>
+                    Margin="20,0,20,10"/>
 
                 
                     <Label
@@ -97,7 +96,7 @@
                     BackgroundColor="DarkSlateGray"
                     Margin="20,0,20,10"/>
 
-                 <Label
+                 <!--<Label
                     Text="HEIGHT (IN CM)"
                     TextColor="LightGrey"
                     FontSize="16"
@@ -109,7 +108,7 @@
                     PlaceholderColor="LightGrey"
                     TextColor="LightGrey"
                     BackgroundColor="DarkSlateGray"
-                    Margin="20,0,20,10"/>
+                    Margin="20,0,20,10"/>-->
 
               
                     <Label
@@ -128,7 +127,7 @@
 
                   
                     <Button
-                    Text="START PAGE"
+                    Text="LOGIN"
                     TextColor="DarkSlateGrey"
                     BackgroundColor="Orange"
                     Margin="20,20,20,10"

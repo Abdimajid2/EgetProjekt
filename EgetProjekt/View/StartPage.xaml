@@ -67,6 +67,14 @@
             Margin="10"
             TextColor="White"></Label>
 
+        <Button
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Text="LOG OUT "
+            TextColor="White"
+            BackgroundColor="Orange"
+            Clicked="OnLogoutButton"></Button>
+
         
 
         

@@ -31,7 +31,7 @@ public partial class CreateAccount : ContentPage
           string.IsNullOrEmpty(Lastname) ||
           string.IsNullOrEmpty(Email) ||
           string.IsNullOrEmpty(Password) ||
-          !int.TryParse(EnterHeight.Text, out height) ||
+          //!int.TryParse(EnterHeight.Text, out height) ||
           !int.TryParse(EnterWeight.Text, out weight))
         {
             DisplayAlert("Error", "Please enter all the information", "OK");
@@ -53,7 +53,7 @@ public partial class CreateAccount : ContentPage
             Email = Email,
             Password = Password,
             Weight = weight,
-            Height = height,
+            //Height = height,
             BirthYear = birthyear
         };
 
@@ -61,8 +61,6 @@ public partial class CreateAccount : ContentPage
 
         await usercollection.InsertOneAsync(user);
 
-        await Navigation.PushAsync(new View.StartPage(user));
-    }
-
-    
+        await Navigation.PushAsync(new LogInPage());
+    } 
 }

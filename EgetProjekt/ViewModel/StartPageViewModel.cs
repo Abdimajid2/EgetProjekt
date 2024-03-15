@@ -47,7 +47,7 @@ namespace EgetProjekt.ViewModel
 
             List<Models.QuotesApi> Quotes = null;
 
-            HttpResponseMessage response = await client.GetAsync("v1/quotes?category=inspirational");
+            HttpResponseMessage response = await client.GetAsync("v1/quotes?category=fitness");
 
             if (response.IsSuccessStatusCode)
             {

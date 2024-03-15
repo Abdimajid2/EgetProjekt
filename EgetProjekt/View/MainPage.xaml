@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EgetProjekt.MainPage">
+             x:Class="EgetProjekt.MainPage"
+             BackgroundColor="#1e272e">
 
     <ScrollView>
-        <VerticalStackLayout
-           BackgroundColor="DarkSlateGray" >
+        <VerticalStackLayout >
 
           
             <Label
                 Text="WELCOME TO"
-                TextColor="White"
+                TextColor="Orange"
                 Margin="1,50,0,0"
                 FontSize="Large"
                 HorizontalOptions="Center">
@@ -18,16 +18,16 @@
             </Label>
 
             <Image
-              Source="logofortheapp.png"
+              Source="logofortheapp2.png"
                VerticalOptions="Center"
                HorizontalOptions="Center"
-              Margin="529,4"></Image>
+              Margin="600,4"></Image>
 
             <Button
                 x:Name="CreateAccountButton"
                 Text="CREATE ACCOUNT"
-                TextColor="White"
-                BackgroundColor="Black"
+                TextColor="Black"
+                BackgroundColor="Orange"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Clicked="OnCreateAccountClicked"
@@ -35,7 +35,7 @@
 
             <Label
                 Text="OR"
-                TextColor="Black"
+                TextColor="White"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Margin="1,50,0,0"></Label>
@@ -43,8 +43,8 @@
             <Button
                 x:Name="LogInButton"
                 Text="LOGIN"
-                BackgroundColor="Black"
-                TextColor="White"
+                BackgroundColor="White"
+                TextColor="Black"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Margin="1,50,0,0"
